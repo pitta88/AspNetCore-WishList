@@ -7,10 +7,19 @@
 
 <a asp-action="create">Add Item</a>
 
-<ul>
-    @foreach (var item in Model)
-    {
-        <li>@item.Description <a asp-action="delete" asp-route-id="@item.Id">delete</a>   </li>
-    }
-</ul>
+@if ( Model != null )
+{
+    <ul>
+
+        @foreach (var item in Model)
+        {
+            <li>@item.Description <a asp-action="delete" asp-route-id="@item.Id">delete</a>   </li>
+        }
+ 
+    </ul>
+}
+else
+{
+    <p>Wishlist is empty. </p>
+}
 

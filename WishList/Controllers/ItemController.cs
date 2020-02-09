@@ -20,7 +20,7 @@ namespace WishList.Controllers
         {
             var model = _context.Items.ToList();
 
-            return View();
+            return View("Index", model);
         }
 
         [HttpGet]
